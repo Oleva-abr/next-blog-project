@@ -2,18 +2,19 @@
 
 import { getPostsBySearch } from "@/servises/getPosts";
 import { FormEventHandler, useState } from "react";
+import useSWR from "swr";
 
-type Props = {
-  onSearch: (value: any[]) => void;
-};
-
-const PostSearch = ({ onSearch }: Props) => {
+const PostSearch = () => {
+  const { mutate } = useSWR("posts");
   const [search, setSeach] = useState("");
+
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
+
     const posts = await getPostsBySearch(search);
-    onSearch(posts);
+    mutate(posts);
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <input

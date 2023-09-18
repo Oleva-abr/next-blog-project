@@ -1,11 +1,14 @@
+"use client";
+
+import { getAllPosts } from "@/servises/getPosts";
 import Link from "next/link";
+import useSWR from "swr";
 
-type Props = {
-  posts: any[];
-};
-
-const Posts = ({ posts }: Props) => {
-  return (
+const Posts = () => {
+  const { data: posts, isLoading } = useSWR("posts", getAllPosts);
+  return isLoading ? (
+    <h3>Loading...</h3>
+  ) : (
     <ul>
       {posts.map((post: any) => (
         <li key={post.id}>
