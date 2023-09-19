@@ -14,16 +14,15 @@
 "use client";
 
 import { useSession } from "next-auth/react";
+import React from "react";
 
 export default function Profile() {
   const { data: session } = useSession();
 
   return (
-    <div className="grid grid-cols-2 text-white p-4">
-      <div>
-        <h1>Profile {session?.user?.name}</h1>
-        {session?.user?.image && <img src={session.user.image} alt="" />}
-      </div>
+    <div>
+      <h1>Profile {session?.user?.name}</h1>
+      {session?.user?.image && <img src={session.user.image} alt="" />}
     </div>
   );
 }
