@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Providers } from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: "Next App",
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main className="container">{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main className="container">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
