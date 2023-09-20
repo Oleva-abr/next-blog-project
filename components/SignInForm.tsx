@@ -24,11 +24,15 @@ const SignInForm = () => {
   };
   return (
     <form onSubmit={handleSubmit} className="login-form">
-      <label>email:</label>
-      <input type="email" name="email" required />
+      <input
+        type="email"
+        name="email"
+        id="user_email"
+        placeholder="Email"
+        required
+      />
 
-      <label>password :</label>
-      <input type="password" name="password" required />
+      <input type="password" name="password" placeholder="Password" required />
       <button type="submit">Sign In</button>
     </form>
   );

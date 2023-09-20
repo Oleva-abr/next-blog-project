@@ -4,7 +4,7 @@
 
 :root {
   --color-bg: #2c2c32;
-  --color-active: #0f7dc6;
+  --color-active: #3c5b70;
 }
 
 body {
@@ -79,7 +79,8 @@ input[type="search"] {
 }
 
 button {
-  padding: 0.5rem 1rem;
+  padding: 1rem;
+  border-radius: 3px;
 }
 
 .stack {
@@ -92,4 +93,13 @@ button {
 .login-form {
   display: grid;
   gap: 1rem;
+}
+
+.login-form input {
+  font-size: 1em;
+  text-align: left;
+  border: 1px solid #c7c7c7;
+  padding: 0.5em;
+  width: 100%;
+  border-radius: 3px;
 }
