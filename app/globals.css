@@ -4,7 +4,7 @@
 
 :root {
   --color-bg: #2c2c32;
-  --color-active: #3c5b70;
+  --color-button: #3c5b70;
 }
 
 body {
@@ -57,7 +57,7 @@ main a:hover {
 }
 
 .active {
-  color: var(--color-active);
+  color: #2196f3;
   cursor: default;
 }
 
@@ -68,7 +68,7 @@ form {
 
 form button,
 button {
-  background-color: var(--color-active);
+  background-color: var(--color-button);
   cursor: pointer;
   color: white;
   border: none;
